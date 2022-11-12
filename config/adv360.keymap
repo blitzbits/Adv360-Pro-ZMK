@@ -4,6 +4,20 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
 
+
+#define BAS_L 0
+#define NAV_L 1
+#define NUM_L 2
+#define SYM_L 3
+#define MEDIA_L 4
+#define BS_L 5
+#define ESC_L 6
+#define TAB_L 7
+
+// Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
+&lt { quick_tap_ms = <200>; };
+
+
 / {
     behaviors {
       #include "macros.dtsi"
@@ -24,34 +38,43 @@
 
     default_layer {
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                                       &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                        &none &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT             &kp LGUI  &kp RCTRL           &none &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B         &none    &none     &kp HOME &none &none &kp PG_UP &none     &none           &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END              &kp PG_DN &kp ENTER &kp SPACE              &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 2
+        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &mo 4                                                                       &mo 4 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0       &none
+        &kp ESC   &kp Q     &kp W    &kp F    &kp P      &kp B  &none                                                                        &none &kp J  &kp L  &kp U     &kp Y    &kp MINUS    &none
+        &kp TAB   &kp A     &kp R    &kp S    &kp T      &kp G  &none           &kp LCTRL &kp LALT             &kp LGUI  &kp RCTRL           &none &kp M  &kp N  &kp E     &kp I    &kp O      &kp BSPC
+        &kp LSHFT &kp Z     &kp X    &kp C    &kp D      &kp V         &none    &none     &kp HOME &none &none &kp PG_UP &none     &none           &kp K  &kp H  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &mo NAV_L                 &kp SPACE &mo NAV_L  &kp END           &kp PG_DN &mo SYM_L &mo NUM_L           &mo SYM_L &kp DOWN  &kp LBKT &kp RBKT &mo 2
       >;
     };
-    keypad {
+    nav_layer {
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &trans                                                                       &mo 3 &kp N6 &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                        &none &kp Y  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT             &kp LGUI  &kp RCTRL           &none &kp H  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B         &none    &none     &kp HOME &none &none &kp PG_UP &none     &none           &kp N  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END              &kp PG_DN &kp ENTER &kp KP_N0              &kp UP     &kp DOWN     &kp KP_DOT    &kp RBKT        &mo 2
+        &none   &none       &none      &none     &none &none     &none                                                       &none &none      &none        &none       &none      &none     &none
+        &trans  &none       &none      &none     &none &none     &none                                                       &none &none      &kp PG_UP    &kp UARW    &kp PG_DN  &none     &none
+        &trans  &kp LCTRL   &kp LALT   &kp LGUI  &none &kp LGUI  &none        &none &none             &none &none            &none &kp HOME   &kp LARW     &kp DARW    &kp RARW   &kp END   &kp DEL
+        &trans  &none       &none      &none     &none &none           &none  &none  &none &none &none &none &none  &none          &none      &none        &none       &none      &none     &trans
+        &none   &none       &none      &none     &trans                 &none  &trans &none             &none &none &kp RET                   &mo 4        &none       &none      &none     &none
       >;
     };
-    fn {
+    num_layer {
       bindings = <
-        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &tog 1                                                       &mo 3 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
-        &trans &trans &trans &trans &trans &trans  &none                                                       &none &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &none        &trans &trans             &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans        &none  &none  &trans &none &none &trans &none  &none        &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans              &trans &trans &trans  &trans  &trans
+        &none   &none       &none      &none     &none   &none     &none                                                       &none &none      &none        &none       &none      &none     &none
+        &none   &none       &none      &none     &none   &none     &none                                                       &none &none      &none        &none       &none      &none     &none
+        &trans  &kp N1      &kp N2     &kp N3    &kp N4  &kp N5    &none        &none &none             &none &none            &none &kp N6     &kp N7       &kp N8      &kp N9     &kp N0    &trans
+        &none   &none       &none      &none     &none   &none           &none  &none  &none &none &none &none &none  &none          &none      &none        &none       &none      &none     &none
+        &none   &none       &none      &none     &none                   &none  &none &none             &none &none &trans                       &none        &none       &none      &none     &none
+      >;
+    };
+    sym_layer {
+      bindings = <
+        &none   &none       &none      &none       &none       &none     &none                                                       &none &none      &none        &none       &none      &none     &none
+        &trans  &kp GRAVE   &kp LBRC   &kp LS(N4)  &kp RBRC    &none     &none                                                       &none &kp LS(N6) &kp LS(N7)   &kp PLUS    &kp EQUAL  &kp UNDER &trans
+        &trans  &kp TILDE   &kp LS(N9) &kp LS(N3)  &kp LS(N0)  &kp LT    &none        &none &none             &none &none            &none &kp GT     &kp DQT      &kp SQT     &kp COLON  &kp SEMI  &trans
+        &trans  &kp LS(N1)  &kp LBKT   &kp LS(N2)  &kp RBKT    &none           &none  &none  &none &none &none &none &none  &none          &none      &kp LS(N5)   &kp LS(N8)  &kp PIPE   &kp BSLH  &trans
+        &none   &none       &none      &none       &mo 4                       &none  &none &none             &none &trans &none                       &trans        &none       &none      &none     &none
       >;
     };
     mod {
       bindings = <
-        &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none                                                                                                          &trans                 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none
+        &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans                                                                                                          &trans                 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none
         &none &none        &none        &none        &none        &none        &bootloader                                                                                                    &bootloader            &none        &none        &none        &none        &none        &none
         &none &none        &none        &none        &none        &none        &rgb_ug RGB_MEFS_CMD 5                 &bt BT_CLR &bt BT_CLR             &bt BT_CLR &bt BT_CLR                 &rgb_ug RGB_MEFS_CMD 5 &none        &none        &none        &none        &none        &none
         &none &none        &none        &none        &none        &none                               &none           &none      &none      &none &none &none      &none      &none                                  &none        &none        &none        &none        &none        &none
