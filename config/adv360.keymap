@@ -38,11 +38,11 @@
 
     default_layer {
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &mo 4                                                                       &mo 4 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0       &none
-        &kp ESC   &kp Q     &kp W    &kp F    &kp P      &kp B  &none                                                                        &none &kp J  &kp L  &kp U     &kp Y    &kp MINUS    &none
-        &kp TAB   &kp A     &kp R    &kp S    &kp T      &kp G  &none           &kp LCTRL &kp LALT             &kp LGUI  &kp RCTRL           &none &kp M  &kp N  &kp E     &kp I    &kp O      &kp BSPC
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp D      &kp V         &none    &none     &kp HOME &none &none &kp PG_UP &none     &none           &kp K  &kp H  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &mo NAV_L                 &kp SPACE &mo NAV_L  &kp END           &kp PG_DN &mo SYM_L &mo NUM_L           &mo SYM_L &kp DOWN  &kp LBKT &kp RBKT &mo 2
+        &kp EQUAL &kp N1      &kp N2     &kp N3     &kp N4       &kp N5      &mo 4                                                                        &mo 4 &kp N6     &kp N7      &kp N8      &kp N9      &kp N0      &none
+        &kp ESC   &kp Q       &kp W      &kp F      &kp P        &kp B       &none                                                                        &none &kp J      &kp L       &kp U       &kp Y       &kp MINUS   &none
+        &kp TAB   &hm LCTRL A &hm LALT R &hm LGUI S &hm LSHFT T  &hm LGUI G  &none           &kp LCTRL &kp LALT             &kp LGUI  &kp RCTRL           &none &hm RGUI M &hm RSHFT N &hm RGUI E  &hm RALT I  &hm RCTRL O &kp BSPC
+        &kp LSHFT &kp Z       &kp X      &kp C      &kp D        &kp V               &none     &none      &kp HOME &none &none &kp PG_UP &none     &none        &kp K      &kp H       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT
+        &mo 2     &kp GRAVE   &kp CAPS   &kp LEFT   &mo NAV_L                        &kp SPACE &mo NAV_L  &kp END           &kp PG_DN &mo SYM_L &mo NUM_L                  &mo SYM_L   &kp DOWN    &kp LBKT    &kp RBKT    &mo 2
       >;
     };
     nav_layer {
@@ -65,11 +65,11 @@
     };
     sym_layer {
       bindings = <
-        &none   &none       &none      &none       &none       &none     &none                                                       &none &none      &none        &none       &none      &none     &none
-        &trans  &kp GRAVE   &kp LBRC   &kp LS(N4)  &kp RBRC    &none     &none                                                       &none &kp LS(N6) &kp LS(N7)   &kp PLUS    &kp EQUAL  &kp UNDER &trans
-        &trans  &kp TILDE   &kp LS(N9) &kp LS(N3)  &kp LS(N0)  &kp LT    &none        &none &none             &none &none            &none &kp GT     &kp DQT      &kp SQT     &kp COLON  &kp SEMI  &trans
-        &trans  &kp LS(N1)  &kp LBKT   &kp LS(N2)  &kp RBKT    &none           &none  &none  &none &none &none &none &none  &none          &none      &kp LS(N5)   &kp LS(N8)  &kp PIPE   &kp BSLH  &trans
-        &none   &none       &none      &none       &mo 4                       &none  &none &none             &none &trans &none                       &trans        &none       &none      &none     &none
+        &none   &none       &none      &none       &none       &none     &none                                                        &none &none      &none        &none       &none      &none     &none
+        &trans  &kp GRAVE   &kp LBRC   &kp LS(N4)  &kp RBRC    &none     &none                                                        &none &kp LS(N6) &kp LS(N7)   &kp PLUS    &kp EQUAL  &kp UNDER &trans
+        &trans  &kp TILDE   &kp LS(N9) &kp LS(N3)  &kp LS(N0)  &kp LT    &none         &none &none             &none &none            &none &kp GT     &kp DQT      &kp SQT     &kp COLON  &kp SEMI  &trans
+        &trans  &kp LS(N1)  &kp LBKT   &kp LS(N2)  &kp RBKT    &none           &none   &none  &none &none &none &none &none  &none          &none      &kp LS(N5)   &kp LS(N8)  &kp PIPE   &kp BSLH  &trans
+        &none   &none       &none      &none       &mo 4                       &kp RET &none &none             &none &trans &none                       &trans        &none       &none      &none     &none
       >;
     };
     mod {
