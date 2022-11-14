@@ -31,6 +31,167 @@
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
       };
+
+      td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&paste>, <&copy>, <&cut>;
+        };  
+    };
+    macros {
+        paste: paste {
+            label = "paste_key";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <20>;
+            bindings
+                = <&macro_tap_time 20>
+                , <&macro_press &kp LGUI>
+                , <&macro_tap &kp V>
+                , <&macro_release &kp LGUI>
+                ;
+        };
+        copy: copy {
+            label = "copy_key";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <20>;
+            bindings
+                = <&macro_tap_time 20>
+                , <&macro_press &kp LGUI>
+                , <&macro_tap &kp C>
+                , <&macro_release &kp LGUI>
+                ;
+        };
+        cut: cut {
+            label = "cut_key";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <20>;
+            bindings
+                = <&macro_tap_time 20>
+                , <&macro_press &kp LGUI>
+                , <&macro_tap &kp X>
+                , <&macro_release &kp LGUI>
+                ;
+        };
+        cuthold: cuthold {
+            label = "cuthold_key";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <20>;
+            bindings
+                = <&macro_tap_time 20>
+                , <&macro_press &kp LGUI &kp X>
+                , <&macro_pause_for_release>
+                , <&macro_press &kp LGUI &kp V>
+                ;
+        };
+
+        hyper: hyper {
+            label = "hyper_key";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings
+                = <&macro_tap_time 10>
+                , <&macro_press &kp LSHFT &kp LCTRL &kp LALT &kp LGUI>
+                , <&macro_pause_for_release>
+                , <&macro_release &kp LSHFT &kp LCTRL &kp LALT &kp LGUI>
+                ;
+        };
+        meh: meh {
+            label = "meh_key";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings
+                = <&macro_tap_time 10>
+                , <&macro_press &kp LSHFT &kp LCTRL &kp LALT>
+                , <&macro_pause_for_release>
+                , <&macro_release &kp LSHFT &kp LCTRL &kp LALT>
+                ;
+        };
+        bs2: bs2 {
+            label = "bs2";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings
+                = <&macro_tap_time 20>
+                , <&macro_tap &kp BKSP &kp BKSP>
+                ;
+        };
+        bs3: bs3 {
+            label = "bs3";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings
+                = <&macro_tap_time 20>
+                , <&macro_tap &kp BKSP &kp BKSP &kp BKSP>
+                ;
+        };
+        bs4: bs4 {
+            label = "bs4";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings
+                = <&macro_tap_time 20>
+                , <&macro_tap &kp BKSP &kp BKSP &kp BKSP &kp BKSP>
+                ;
+        };
+        bs5: bs5 {
+            label = "bs5";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings
+                = <&macro_tap_time 20>
+                , <&macro_tap &kp BKSP &kp BKSP &kp BKSP &kp BKSP &kp BKSP>
+                ;
+        };
+        bs6: bs6 {
+            label = "bs6";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings
+                = <&macro_tap_time 20>
+                , <&macro_tap &kp BKSP &kp BKSP &kp BKSP &kp BKSP &kp BKSP &kp BKSP>
+                ;
+        };
+        cmdtab: cmdtab {
+            label = "cmdtab_key";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <20>;
+            bindings
+                = <&macro_tap_time 20>
+                , <&macro_press &kp LGUI>
+                , <&macro_tap &kp TAB>
+                , <&macro_press &mo NAV_L>
+                , <&macro_pause_for_release>
+                , <&macro_release &mo NAV_L &kp LGUI>
+                ;
+        };
+        alttab: cmdtab {
+            label = "alttab_key";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <20>;
+            bindings
+                = <&macro_tap_time 20>
+                , <&macro_press &kp LALT>
+                , <&macro_tap &kp TAB>
+                , <&macro_press &mo NAV_L>
+                , <&macro_pause_for_release>
+                , <&macro_release &mo NAV_L &kp LALT>
+                ;
+        };
     };
 
   keymap {
@@ -42,14 +203,14 @@
         &kp ESC   &kp Q       &kp W      &kp F      &kp P        &kp B       &none                                                                        &none &kp J      &kp L       &kp U       &kp Y       &kp MINUS   &none
         &kp TAB   &hm LCTRL A &hm LALT R &hm LGUI S &hm LSHFT T  &hm LGUI G  &none           &kp LCTRL &kp LALT             &kp LGUI  &kp RCTRL           &none &hm RGUI M &hm RSHFT N &hm RGUI E  &hm RALT I  &hm RCTRL O &kp BSPC
         &kp LSHFT &kp Z       &kp X      &kp C      &kp D        &kp V               &none     &none      &kp HOME &none &none &kp PG_UP &none     &none        &kp K      &kp H       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT
-        &mo 2     &kp GRAVE   &kp CAPS   &kp LEFT   &mo NAV_L                        &kp SPACE &mo NAV_L  &kp END           &kp PG_DN &mo SYM_L &mo NUM_L                  &mo SYM_L   &kp DOWN    &kp LBKT    &kp RBKT    &mo 2
+        &mo 2     &kp GRAVE   &kp CAPS   &kp LEFT   &mo NAV_L                        &kp SPACE &mo NAV_L  &alttab           &kp PG_DN &mo SYM_L &mo NUM_L                  &mo SYM_L   &kp DOWN    &kp LBKT    &kp RBKT    &mo 2
       >;
     };
     nav_layer {
       bindings = <
         &none   &none       &none      &none     &none &none     &none                                                       &none &none      &none        &none       &none      &none     &none
         &trans  &none       &none      &none     &none &none     &none                                                       &none &none      &kp PG_UP    &kp UARW    &kp PG_DN  &none     &none
-        &trans  &kp LCTRL   &kp LALT   &kp LGUI  &none &kp LGUI  &none        &none &none             &none &none            &none &kp HOME   &kp LARW     &kp DARW    &kp RARW   &kp END   &kp DEL
+        &trans  &kp LCTRL   &kp LALT   &kp LGUI  &td0 &kp LGUI  &none        &none &none             &none &none            &none &kp HOME   &kp LARW     &kp DARW    &kp RARW   &kp END   &kp DEL
         &trans  &none       &none      &none     &none &none           &none  &none  &none &none &none &none &none  &none          &none      &none        &none       &none      &none     &trans
         &none   &none       &none      &none     &trans                 &none  &trans &none             &none &none &kp RET                   &mo 4        &none       &none      &none     &none
       >;
