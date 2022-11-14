@@ -192,6 +192,46 @@
                 , <&macro_release &mo NAV_L &kp LALT>
                 ;
         };
+        kvm1: kvm1 {
+            label = "kvm1";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings
+                = <&macro_tap_time 150>
+                , <&macro_tap &kp SLCK &kp SLCK &kp 1>
+                ;
+        };
+        kvm2: kvm2 {
+            label = "kvm2";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings
+                = <&macro_tap_time 150>
+                , <&macro_tap &kp SLCK &kp SLCK &kp 2>
+                ;
+        };
+        kvm3: kvm3 {
+            label = "kvm3";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings
+                = <&macro_tap_time 150>
+                , <&macro_tap &kp SLCK &kp SLCK &kp 3>
+                ;
+        };
+        kvm4: kvm4 {
+            label = "kvm4";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings
+                = <&macro_tap_time 150>
+                , <&macro_tap &kp SLCK &kp SLCK &kp 4>
+                ;
+        };
     };
 
   keymap {
@@ -199,11 +239,11 @@
 
     default_layer {
       bindings = <
-        &kp EQUAL &kp N1      &kp N2     &kp N3     &kp N4       &kp N5      &mo 4                                                                        &mo 4 &kp N6     &kp N7      &kp N8      &kp N9      &kp N0      &none
-        &kp ESC   &kp Q       &kp W      &kp F      &kp P        &kp B       &none                                                                        &none &kp J      &kp L       &kp U       &kp Y       &kp MINUS   &none
-        &kp TAB   &hm LCTRL A &hm LALT R &hm LGUI S &hm LSHFT T  &hm LGUI G  &none           &kp LCTRL &kp LALT             &kp LGUI  &kp RCTRL           &none &hm RGUI M &hm RSHFT N &hm RGUI E  &hm RALT I  &hm RCTRL O &kp BSPC
-        &kp LSHFT &kp Z       &kp X      &kp C      &kp D        &kp V               &none     &none      &kp HOME &none &none &kp PG_UP &none     &none        &kp K      &kp H       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT
-        &mo 2     &kp GRAVE   &kp CAPS   &kp LEFT   &mo NAV_L                        &kp SPACE &mo NAV_L  &alttab           &kp PG_DN &mo SYM_L &mo NUM_L                  &mo SYM_L   &kp DOWN    &kp LBKT    &kp RBKT    &mo 2
+        &kp EQUAL       &kp N1      &kp N2     &kp N3     &kp N4       &kp N5      &mo 4                                                                        &mo 4 &kp N6     &kp N7      &kp N8      &kp N9      &kp N0      &none
+        &lt ESC_L ESC   &kp Q       &kp W      &kp F      &kp P        &kp B       &none                                                                        &none &kp J      &kp L       &kp U       &kp Y       &kp MINUS   &none
+        &lt TAB_L TAB         &hm LCTRL A &hm LALT R &hm LGUI S &hm LSHFT T  &hm LGUI G  &none           &kp LCTRL &kp LALT             &kp LGUI  &kp RCTRL           &none &hm RGUI M &hm RSHFT N &hm RGUI E  &hm RALT I  &hm RCTRL O &lt BS_L BKSP
+        &kp LSHFT       &kp Z       &kp X      &kp C      &kp D        &kp V               &none     &none      &kp HOME &none &none &kp PG_UP &none     &none        &kp K      &kp H       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT
+        &mo 2           &kp GRAVE   &kp CAPS   &kp LEFT   &mo NAV_L                        &kp SPACE &mo NAV_L  &alttab           &kp PG_DN &mo SYM_L &mo NUM_L                  &mo SYM_L   &kp DOWN    &kp LBKT    &kp RBKT    &mo 2
       >;
     };
     nav_layer {
@@ -240,6 +280,42 @@
         &none &none        &none        &none        &none        &none        &rgb_ug RGB_MEFS_CMD 5                 &bt BT_CLR &bt BT_CLR             &bt BT_CLR &bt BT_CLR                 &rgb_ug RGB_MEFS_CMD 5 &none        &none        &none        &none        &none        &none
         &none &none        &none        &none        &none        &none                               &none           &none      &none      &none &none &none      &none      &none                                  &none        &none        &none        &none        &none        &none
         &none &none        &none        &bl BL_INC   &bl BL_DEC                                       &rgb_ug RGB_TOG &bl BL_TOG &none                  &none      &bl BL_TOG &rgb_ug RGB_TOG                                     &bl BL_INC   &bl BL_DEC   &none        &none        &none
+      >;
+    };
+    bs_layer {
+      bindings = <
+        &none   &none       &none      &none     &none   &none     &none                                                       &none &none      &none        &none       &none      &none     &none
+        &none   &none       &none      &none     &none   &none     &none                                                       &none &none      &none        &none       &none      &none     &none
+        &none   &none       &none      &none     &none   &none     &none        &none &none             &none &none            &none &bs6       &bs5         &bs4        &bs3       &bs2      &trans
+        &none   &none       &none      &none     &none   &none           &none  &none  &none &none &none &none &none  &none          &none      &none        &none       &none      &none     &none
+        &none   &none       &none      &none     &none                   &none  &none &none             &none &none &none                       &none        &none       &none      &none     &none
+      >;
+    };
+    esc_layer {
+      bindings = <
+        &none   &none       &none      &none     &none   &none     &none                                                       &none &none      &none        &none       &none      &none     &none
+        &trans  &kvm1       &kvm2      &kvm3     &kvm4   &kp LCTRL(LGUI(Q))     &none                                                       &none &none      &none        &none       &none      &none     &none
+        &none   &none       &none      &none     &none   &none     &none        &none &none             &none &none            &none &none      &none        &none       &none      &none     &none
+        &none   &none       &none      &none     &none   &none           &none  &none  &none &none &none &none &none  &none          &none      &none        &none       &none      &none     &none
+        &none   &none       &none      &none     &none                   &none  &none &none             &none &none &none                       &none        &none       &none      &none     &none
+      >;
+    };
+    tab_layer {
+      bindings = <
+        &none   &none       &none      &none     &none   &none     &none                                                       &none &none      &none        &none       &none      &none     &none
+        &none   &none       &none      &none     &none   &none     &none                                                       &none &none      &none        &none       &none      &none     &none
+        &trans   &none       &none      &none     &none   &none     &none        &none &none             &none &none            &none &none      &none        &none       &none      &none     &none
+        &none   &none       &none      &none     &none   &none           &none  &none  &none &none &none &none &none  &none          &none      &none        &none       &none      &none     &none
+        &none   &none       &none      &none     &none                   &none  &none &none             &none &none &none                       &none        &none       &none      &none     &none
+      >;
+    };
+    none_layer {
+      bindings = <
+        &none   &none       &none      &none     &none   &none     &none                                                       &none &none      &none        &none       &none      &none     &none
+        &none   &none       &none      &none     &none   &none     &none                                                       &none &none      &none        &none       &none      &none     &none
+        &none   &none       &none      &none     &none   &none     &none        &none &none             &none &none            &none &none      &none        &none       &none      &none     &none
+        &none   &none       &none      &none     &none   &none           &none  &none  &none &none &none &none &none  &none          &none      &none        &none       &none      &none     &none
+        &none   &none       &none      &none     &none                   &none  &none &none             &none &none &none                       &none        &none       &none      &none     &none
       >;
     };
   };
