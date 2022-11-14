@@ -294,7 +294,7 @@
     esc_layer {
       bindings = <
         &none   &none       &none      &none     &none   &none     &none                                                       &none &none      &none        &none       &none      &none     &none
-        &trans  &kvm1       &kvm2      &kvm3     &kvm4   &kp LCTRL(LGUI(Q))     &none                                                       &none &none      &none        &none       &none      &none     &none
+        &trans  &kvm1       &kvm2      &kvm3     &kvm4   &none     &none                                                       &none &none      &none        &none       &none      &none     &none
         &none   &none       &none      &none     &none   &none     &none        &none &none             &none &none            &none &none      &none        &none       &none      &none     &none
         &none   &none       &none      &none     &none   &none           &none  &none  &none &none &none &none &none  &none          &none      &none        &none       &none      &none     &none
         &none   &none       &none      &none     &none                   &none  &none &none             &none &none &none                       &none        &none       &none      &none     &none
