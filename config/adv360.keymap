@@ -196,40 +196,36 @@
             label = "kvm1";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
+            wait-ms = <100>;
             bindings
-                = <&macro_tap_time 150>
-                , <&macro_tap &kp SLCK &kp SLCK &kp 1>
+                = <&macro_tap &kp SLCK &kp SLCK &kp 1>
                 ;
         };
         kvm2: kvm2 {
             label = "kvm2";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
+            wait-ms = <100>;
             bindings
-                = <&macro_tap_time 150>
-                , <&macro_tap &kp SLCK &kp SLCK &kp 2>
+                = <&macro_tap &kp SLCK &kp SLCK &kp 2>
                 ;
         };
         kvm3: kvm3 {
             label = "kvm3";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
+            wait-ms = <100>;
             bindings
-                = <&macro_tap_time 150>
-                , <&macro_tap &kp SLCK &kp SLCK &kp 3>
+                = <&macro_tap &kp SLCK &kp SLCK &kp 3>
                 ;
         };
         kvm4: kvm4 {
             label = "kvm4";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
+            wait-ms = <100>;
             bindings
-                = <&macro_tap_time 150>
-                , <&macro_tap &kp SLCK &kp SLCK &kp 4>
+                = <&macro_tap &kp SLCK &kp SLCK &kp 4>
                 ;
         };
     };
