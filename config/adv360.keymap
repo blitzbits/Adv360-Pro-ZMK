@@ -196,7 +196,7 @@
             label = "kvm1";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <100>;
+            wait-ms = <150>;
             bindings
                 = <&macro_tap &kp SLCK &kp SLCK &kp 1>
                 ;
@@ -205,7 +205,7 @@
             label = "kvm2";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <100>;
+            wait-ms = <150>;
             bindings
                 = <&macro_tap &kp SLCK &kp SLCK &kp 2>
                 ;
@@ -214,7 +214,7 @@
             label = "kvm3";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <100>;
+            wait-ms = <150>;
             bindings
                 = <&macro_tap &kp SLCK &kp SLCK &kp 3>
                 ;
@@ -223,7 +223,7 @@
             label = "kvm4";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <100>;
+            wait-ms = <150>;
             bindings
                 = <&macro_tap &kp SLCK &kp SLCK &kp 4>
                 ;
@@ -237,7 +237,7 @@
       bindings = <
         &kp EQUAL       &kp N1      &kp N2     &kp N3     &kp N4       &kp N5      &mo 4                                                                        &mo 4 &kp N6     &kp N7      &kp N8      &kp N9      &kp N0      &none
         &lt ESC_L ESC   &kp Q       &kp W      &kp F      &kp P        &kp B       &none                                                                        &none &kp J      &kp L       &kp U       &kp Y       &kp MINUS   &none
-        &lt TAB_L TAB         &hm LCTRL A &hm LALT R &hm LGUI S &hm LSHFT T  &hm LGUI G  &none           &kp LCTRL &kp LALT             &kp LGUI  &kp RCTRL           &none &hm RGUI M &hm RSHFT N &hm RGUI E  &hm RALT I  &hm RCTRL O &lt BS_L BKSP
+        &lt TAB_L TAB         &hm LCTRL A &hm LALT R &hm LGUI S &hm LSHFT T  &hm LGUI G  &none           &kp SLCK &kp LALT             &kp LGUI  &kp RCTRL           &none &hm RGUI M &hm RSHFT N &hm RGUI E  &hm RALT I  &hm RCTRL O &lt BS_L BKSP
         &kp LSHFT       &kp Z       &kp X      &kp C      &kp D        &kp V               &none     &none      &kp HOME &none &none &kp PG_UP &none     &none        &kp K      &kp H       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT
         &mo 2           &kp GRAVE   &kp CAPS   &kp LEFT   &mo NAV_L                        &kp SPACE &mo NAV_L  &alttab           &kp PG_DN &mo SYM_L &mo NUM_L                  &mo SYM_L   &kp DOWN    &kp LBKT    &kp RBKT    &mo 2
       >;
