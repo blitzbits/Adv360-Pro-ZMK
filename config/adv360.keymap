@@ -14,9 +14,21 @@
 #define ESC_L 6
 #define TAB_L 7
 
+#define TAPPING_TERM 200
+
+#define HYP LS(LC(LA(LGUI)))
+#define HYPER(key) LS(LC(LA(LG(key))))
+
+#define MEH LS(LC(LALT))
+#define MEHK(key) LS(LC(LA(key)))
+
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
 
+&mt {
+    tapping-term-ms = <TAPPING_TERM>;
+    flavor = "tap-preferred";
+};
 
 / {
     behaviors {
@@ -250,7 +262,7 @@
         &kp EQUAL       &kp N1      &kp N2     &kp N3     &kp N4       &kp N5      &mo 4                                                                        &mo 4 &kp N6     &kp N7      &kp N8      &kp N9      &kp N0      &none
         &lt ESC_L ESC   &kp Q       &kp W      &kp F      &kp P        &kp B       &none                                                                        &none &kp J      &kp L       &kp U       &kp Y       &kp MINUS   &none
         &lt TAB_L TAB         &hm LCTRL A &hm LALT R &hm LGUI S &hm LSHFT T  &hm LGUI G  &none           &kp SLCK &kp LALT             &kp LGUI  &kp RCTRL           &none &hm RGUI M &hm RSHFT N &hm RGUI E  &hm RALT I  &hm RCTRL O &lt BS_L BKSP
-        &kp LSHFT       &kp Z       &kp X      &kp C      &kp D        &kp V               &none     &none      &kp HOME &none &none &kp PG_UP &none     &none        &kp K      &kp H       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT
+        &kp LSHFT       &kp Z       &kp X      &kp C      &hm MEH D        &hm HYP V               &none     &none      &kp HOME &none &none &kp PG_UP &none     &none        &kp K      &kp H       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT
         &mo 2           &kp GRAVE   &kp CAPS   &kp LEFT   &mo NAV_L                        &kp SPACE &mo NAV_L  &alttab           &kp PG_DN &mo SYM_L &mo NUM_L                  &mo SYM_L   &kp DOWN    &kp LBKT    &kp RBKT    &mo 2
       >;
     };
